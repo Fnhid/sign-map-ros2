@@ -16,6 +16,46 @@ This folder builds the workflow:
 - `run_full_pipeline.sh`: end-to-end runner (SLAM + DETR/OCR/3D + web view)
 - `pipeline.py`: stage-2 processor (uses existing framewise pointcloud logs)
 
+## Conda Setup
+
+This pipeline uses two Python environments by default:
+
+- `vggt-slam`: for VGGT-SLAM 2.0
+- `prior_slam_reimpl`: for stage-2 detection/OCR/3D mapping
+
+The commands below use the same environment names that this repo already expects in `run_full_pipeline.sh`.
+
+### 1) VGGT-SLAM 2.0 environment
+
+Following the upstream `VGGT-SLAM` setup in this workspace:
+
+```bash
+cd /workspace/VGGT-SLAM
+conda create -n vggt-slam python=3.11
+conda activate vggt-slam
+chmod +x setup.sh
+./setup.sh
+```
+
+This repo expects:
+
+- `VGGT_REPO=./VGGT-SLAM`
+- `VGGT_PY_REPO=./vggt`
+
+relative to this repository root unless overridden with environment variables.
+
+### 2) Stage-2 environment
+
+Example setup for the environment used by `pipeline.py`:
+
+```bash
+conda create -n prior_slam_reimpl python=3.11 -y
+conda activate prior_slam_reimpl
+pip install numpy opencv-python scipy
+```
+
+Depending on your OCR / detector choice, you may also need extra packages such as EasyOCR, Tesseract bindings, or other model-specific dependencies already used in your local workspace.
+
 ## Quick Start
 
 ```bash
