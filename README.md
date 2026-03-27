@@ -18,21 +18,21 @@ This folder builds the workflow:
 
 ## Conda Setup
 
-This pipeline uses two Python environments by default:
+This repo uses a single conda environment:
 
-- `vggt-slam`: for VGGT-SLAM 2.0
-- `sign-map-ros2`: for stage-2 detection/OCR/3D mapping
+- `sign-map-ros2`
 
-The commands below use the same environment names that this repo already expects in `run_full_pipeline.sh`.
+Create and activate it first:
 
-### 1) VGGT-SLAM 2.0 environment
+```bash
+conda create -n sign-map-ros2 python=3.11 -y
+conda activate sign-map-ros2
+```
 
-Following the upstream `VGGT-SLAM` setup in this workspace:
+Then install VGGT-SLAM 2.0 into the same environment:
 
 ```bash
 cd /workspace/VGGT-SLAM
-conda create -n vggt-slam python=3.11
-conda activate vggt-slam
 chmod +x setup.sh
 ./setup.sh
 ```
@@ -44,13 +44,9 @@ This repo expects:
 
 relative to this repository root unless overridden with environment variables.
 
-### 2) Stage-2 environment
-
-Example setup for the environment used by `pipeline.py`:
+For stage-2, install the extra Python packages you need in the same `sign-map-ros2` environment:
 
 ```bash
-conda create -n sign-map-ros2 python=3.11 -y
-conda activate sign-map-ros2
 pip install numpy opencv-python scipy
 ```
 

@@ -216,7 +216,7 @@ else
       VGGT_EXTRA_ARGS+=(--os_show_masks 1)
     fi
   fi
-  PYTHONPATH="$VGGT_PY_REPO:${PYTHONPATH:-}" conda run -n vggt-slam python "$VGGT_REPO/main.py" \
+  PYTHONPATH="$VGGT_PY_REPO:${PYTHONPATH:-}" conda run -n sign-map-ros2 python "$VGGT_REPO/main.py" \
     --image_folder "$IMAGE_FOLDER" \
     --max_loops "$MAX_LOOPS" \
     --log_results \
