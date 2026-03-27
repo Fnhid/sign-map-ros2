@@ -1,0 +1,19 @@
+frame_ingest_node:
+  ros__parameters:
+    rgb_topic: /camera/image_raw
+    depth_topic: ""
+    camera_info_topic: ""
+    session_root: /tmp/sign_map_live
+
+pipeline_runner_node:
+  ros__parameters:
+    frames_dir: /tmp/sign_map_live/frames
+    run_root: /tmp/sign_map_runs
+    run_interval_sec: 10.0
+    min_frames_to_run: 40
+    video_fps: 2
+    backend: vggt
+
+result_publisher_node:
+  ros__parameters:
+    map_frame: map

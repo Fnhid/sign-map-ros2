@@ -1,0 +1,77 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Environments and secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.crt
+*.secret
+
+# Runtime outputs
+runs/
+tmp_out/
+tmp_out2/
+tmp_out3/
+tmp_out4/
+tmp_out5/
+tmp_fake_logs/
+*.log
+*.pid
+
+# Datasets / media / archives
+samples/*.mp4
+samples/*.mov
+samples/*.avi
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Model artifacts
+models/
+weights/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+
+# Third-party cloned repos / heavy externals
+VGGT-SLAM/
+LoGeR/
+cuVSLAM/
+vggt/
+third_party/
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+cuVSLAM/build*/
+
+# ROS2 build/install/log
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Keep source tree clean if these are generated
+*.npz
+*.npy
