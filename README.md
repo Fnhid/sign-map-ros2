@@ -1,3 +1,5 @@
+# Warning: this repo is in work, so very unstable
+
 # Sign-to-PointCloud Web Pipeline
 
 This folder builds the workflow:
