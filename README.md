@@ -171,9 +171,3 @@ colcon build --symlink-install
 source install/setup.bash
 ros2 launch sign_map_bridge sign_map_stack.launch.py
 ```
-
-## Video candidates found in this workspace
-
-- `./vggt/examples/videos/kitchen.mp4`
-- `./vggt/examples/videos/room.mp4`
-- `/workspace/Depth-Anything-3-ori/da3_streaming/IMG_8128.MOV`
