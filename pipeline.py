@@ -1085,7 +1085,7 @@ def create_ocr_reader(args, device: str):
             if backend == "paddleocr":
                 raise RuntimeError(
                     "paddleocr backend requested but paddleocr is not available. "
-                    "Install it in prior_slam_reimpl env or use --ocr_backend easyocr/tesseract."
+                    "Install it in sign-map-ros2 env or use --ocr_backend easyocr/tesseract."
                 )
 
     if backend in ("auto", "easyocr"):
@@ -1099,7 +1099,7 @@ def create_ocr_reader(args, device: str):
             if backend == "easyocr":
                 raise RuntimeError(
                     "easyocr backend requested but easyocr is not available. "
-                    "Install it in prior_slam_reimpl env or use --ocr_backend tesseract."
+                    "Install it in sign-map-ros2 env or use --ocr_backend tesseract."
                 )
 
     if backend in ("auto", "tesseract", "paddleocr"):

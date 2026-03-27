@@ -6,7 +6,7 @@ export PYTHONUNBUFFERED=1
 export FLAGS_use_cuda=0
 
 source /workspace/miniconda3/etc/profile.d/conda.sh
-conda activate prior_slam_reimpl
+conda activate sign-map-ros2
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="${PROJECT_ROOT:-$SCRIPT_DIR}"

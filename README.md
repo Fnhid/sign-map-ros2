@@ -21,7 +21,7 @@ This folder builds the workflow:
 This pipeline uses two Python environments by default:
 
 - `vggt-slam`: for VGGT-SLAM 2.0
-- `prior_slam_reimpl`: for stage-2 detection/OCR/3D mapping
+- `sign-map-ros2`: for stage-2 detection/OCR/3D mapping
 
 The commands below use the same environment names that this repo already expects in `run_full_pipeline.sh`.
 
@@ -49,8 +49,8 @@ relative to this repository root unless overridden with environment variables.
 Example setup for the environment used by `pipeline.py`:
 
 ```bash
-conda create -n prior_slam_reimpl python=3.11 -y
-conda activate prior_slam_reimpl
+conda create -n sign-map-ros2 python=3.11 -y
+conda activate sign-map-ros2
 pip install numpy opencv-python scipy
 ```
 
@@ -133,7 +133,7 @@ It prints a public `https://...` URL. Keep the process running to keep the tunne
 ## Stage-2 Only (if SLAM logs already exist)
 
 ```bash
-conda run -n prior_slam_reimpl python ./pipeline.py \
+conda run -n sign-map-ros2 python ./pipeline.py \
   --image_folder /path/to/image_sequence_folder \
   --pointcloud_log_dir /path/to/vggt_poses_logs \
   --output_dir /path/to/output_dir \

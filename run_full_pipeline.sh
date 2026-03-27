@@ -170,7 +170,7 @@ fi
 if [[ "$BACKEND" == "pi3" ]]; then
   wait_gpu_idle
   echo "[1/2] Running PI3 to produce framewise pointcloud logs..."
-  PYTHONPATH="$PI3_REPO:${PYTHONPATH:-}" conda run -n prior_slam_reimpl python "$PI3_LOG_PY" \
+  PYTHONPATH="$PI3_REPO:${PYTHONPATH:-}" conda run -n sign-map-ros2 python "$PI3_LOG_PY" \
     --image_folder "$IMAGE_FOLDER" \
     --log_path "$LOG_PATH" \
     --pi3_repo "$PI3_REPO"
@@ -256,7 +256,7 @@ PIPELINE_EXTRA_ARGS=()
 if [[ "$RUN_OS" == "1" ]]; then
   PIPELINE_EXTRA_ARGS+=(--open_set_json "$OS_SAVE_PATH")
 fi
-conda run -n prior_slam_reimpl python "$PIPELINE_PY" \
+conda run -n sign-map-ros2 python "$PIPELINE_PY" \
   --image_folder "$IMAGE_FOLDER" \
   --pointcloud_log_dir "$LOG_DIR" \
   --output_dir "$RUN_DIR" \
